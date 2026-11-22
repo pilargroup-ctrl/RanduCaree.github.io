@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RanduCare Web | Smart Pemantau Demam OPSI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR MODERN -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-dot">🌿</span>
+      <strong>RANDUCARE</strong>
+    </div>
+    <div class="nav-links">
+      <a href="#fitur">Fitur</a>
+      <a href="#panduan">Panduan</a>
+      <a href="https://docs.google.com/document/d/1fhrBl1dXGCHNeLfaF02BZd81YCcTI82D4Qy4PzrwqwQ/edit" target="_blank">Esai Docs</a>
+      <a href="portofolio.html" class="nav-pill">Portofolio & Skill &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION GAYA REFERENSI (TEKS BESAR + GAMBAR MELAYANG) -->
+  <header class="hero-showcase">
+    <div class="watermark-text">RANDUCARE</div>
+
+    <div class="hero-top-badge">
+      ✨ 100% Karya M. Ziddan Arzaqi (8F - Asy Syirazi) • Inovasi OPSI IPT
+    </div>
+
+    <div class="hero-visual-stage">
+      <!-- Floating Card Kiri -->
+      <div class="float-card left-card anim-float-slow">
+        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=300&q=80" alt="Ekstrak Daun Randu" class="mini-thumb" />
+        <div>
+          <span class="tag-blue">Herbal Aktif</span>
+          <h4>Daun Randu 600mg</h4>
+          <p>Daya antipiretik 3,25% alami penurun demam.</p>
+        </div>
+      </div>
+
+      <!-- Gambar Utama Tengah (3D/Visual Medis Modern) -->
+      <div class="center-mascot anim-float">
+        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Smart Medical Care" class="hero-main-img" />
+        <div class="live-pill">
+          <span class="pulse-dot"></span> Monitoring Aktif 24/7
+        </div>
+      </div>
+
+      <!-- Floating Card Kanan (Kartu Identitas Digital) -->
+      <div class="float-card right-card anim-float-delay">
+        <div class="smart-id-card">
+          <div class="card-chip"></div>
+          <span class="card-label">RANDUCARE SMART PASS</span>
+          <h3>HEPTA-THERMOCHRON</h3>
+          <p>OPSI • BIDANG IPT</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner Lengkung Bawah Hero -->
+    <div class="hero-bottom-bar">
+      <div class="stat-box">
+        <strong>4–6 Jam</strong>
+        <span>Durasi Optimal Plester</span>
+      </div>
+      <div class="center-cta">
+        <h2>PANTAU DEMAM LEBIH CEPAT & AKURAT</h2>
+        <a href="#fitur" class="btn-glow">Mulai Gunakan Aplikasi &darr;</a>
+      </div>
+      <div class="stat-box">
+        <strong>38,5°C+</strong>
+        <span>Deteksi Alarm Darurat</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER APRESIASI USTADZ PRIMA & LINK GOOGLE DOCS -->
+  <section class="container">
+    <div class="tribute-banner reveal">
+      <div class="tribute-icon">🌟</div>
+      <div class="tribute-content">
+        <h3>Terima Kasih Khusus Kepada Ustadz Prima</h3>
+        <p>Terima kasih banyak <strong>Ustadz Prima</strong> sudah meluangkan waktu untuk menguji, menilai, dan membimbing pengembangan website ini. Semoga Ustadz Prima puas dengan hasil karya Ziddan!</p>
+        <div class="tribute-actions">
+          <a href="https://docs.google.com/document/d/1fhrBl1dXGCHNeLfaF02BZd81YCcTI82D4Qy4PzrwqwQ/edit" target="_blank" class="btn-outline-dark">📄 Buka Esai OPSI (Google Docs)</a>
+          <a href="portofolio.html" class="btn-solid-blue">🏆 Lihat Prestasi & Portofolio PTV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FITUR UTAMA INTERAKTIF (BENTO GRID) -->
+  <main id="fitur" class="container bento-grid">
+    
+    <!-- Kartu 1: Timer Otomatis -->
+    <section class="bento-card reveal">
+      <div class="card-header-flex">
+        <span class="icon-circle">⏱️</span>
+        <div>
+          <h2>Timer Plester Daun Randu</h2>
+          <p>Hitung mundur otomatis waktu penggantian plester</p>
+        </div>
+      </div>
+      
+      <div class="timer-display" id="timerDisplay">04:00:00</div>
+      
+      <div class="btn-group">
+        <button id="startBtn" class="btn primary">▶ Mulai (4 Jam)</button>
+        <button id="demoFastBtn" class="btn accent">⚡ Tes Alarm (5 Detik)</button>
+        <button id="resetBtn" class="btn secondary">↺ Reset</button>
+      </div>
+      <p id="timerStatus" class="status-text">Status: Siap digunakan</p>
+    </section>
+
+    <!-- Kartu 2: Grafik & Input Suhu -->
+    <section class="bento-card reveal">
+      <div class="card-header-flex">
+        <span class="icon-circle">📈</span>
+        <div>
+          <h2>Grafik Tren Suhu Tubuh</h2>
+          <p>Catat suhu termometer untuk melihat grafik pemulihan</p>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <input type="number" id="tempInput" step="0.1" min="34" max="43" placeholder="Ketik suhu (misal: 38.7)" />
+        <button id="addTempBtn" class="btn primary">+ Simpan</button>
+      </div>
+
+      <div id="warningBox" class="warning hidden">
+        🚨 <strong>PERINGATAN DARURAT:</strong> Suhu tubuh di atas 38,5°C! Segera kompres hangat dan konsultasikan ke dokter.
+      </div>
+
+      <div class="chart-container">
+        <canvas id="tempChart"></canvas>
+      </div>
+      <button id="clearDataBtn" class="btn danger small">🗑️ Hapus Riwayat Grafik</button>
+    </section>
+
+  </main>
+
+  <!-- SECTION GELAP GAYA REFERENSI ("GROW BEYOND BORDERS") -->
+  <section id="panduan" class="container">
+    <div class="dark-showcase-box reveal">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=400&q=80" alt="Panduan Medis" class="floating-globe anim-float" />
+      <h2>PANDUAN PENGGUNAAN RANDUCARE WEB</h2>
+      <p class="dark-sub">4 Langkah Mudah Memantau Penurunan Demam Secara Mandiri di Rumah</p>
+      
+      <div class="steps-grid">
+        <div class="step-item">
+          <span class="step-num">01</span>
+          <h4>Scan QR Kemasan</h4>
+          <p>Buka RanduCare Web langsung dari kamera HP tanpa instal aplikasi.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-num">02</span>
+          <h4>Aktifkan Timer 4 Jam</h4>
+          <p>Tempelkan plester ekstrak daun randu 600mg di dahi lalu klik Mulai.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-num">03</span>
+          <h4>Input Suhu Berkala</h4>
+          <p>Masukkan angka termometer tiap 1–2 jam untuk memantau grafik.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-num">04</span>
+          <h4>Cek Alarm Darurat</h4>
+          <p>Jika suhu melewati 38,5°C, sistem otomatis memberi peringatan merah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULIR UJI KEPUASAN USTADZ PRIMA (LANGSUNG KE GMAIL) -->
+  <section class="container">
+    <div class="bento-card feedback-section reveal">
+      <div class="feedback-grid">
+        <div class="feedback-info">
+          <span class="tag-blue">Evaluasi Penguji</span>
+          <h2>Apakah Ustadz Prima Puas dengan Web Ini?</h2>
+          <p>Silakan pilih tingkat kepuasan dan tuliskan catatan evaluasi di samping. Hasil penilaian akan langsung terkirim ke email <strong>ziddaaaan@gmail.com</strong>.</p>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Evaluasi Digital" class="feedback-img" />
+        </div>
+
+        <form action="mailto:ziddaaaan@gmail.com" method="POST" enctype="text/plain" class="feedback-form">
+          <div class="form-field">
+            <label>Nama Penguji:</label>
+            <input type="text" name="Nama_Penguji" value="Ustadz Prima" required />
+          </div>
+          <div class="form-field">
+            <label>Tingkat Kepuasan Ustadz Prima:</label>
+            <select name="Tingkat_Kepuasan" required>
+              <option value="Sangat Puas (⭐⭐⭐⭐⭐) - Web Keren & Fitur Berjalan Sempurna!">⭐⭐⭐⭐⭐ Sangat Puas (Sempurna!)</option>
+              <option value="Puas (⭐⭐⭐⭐) - Tampilan Modern & Mudah Digunakan">⭐⭐⭐⭐ Puas (Sangat Baik)</option>
+              <option value="Cukup Puas (⭐⭐⭐) - Bagus, Perlu Sedikit Pengembangan">⭐⭐⭐ Cukup Puas</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Pesan / Nilai / Masukan untuk Ziddan:</label>
+            <textarea name="Catatan_Ustadz_Prima" rows="4" placeholder="Tuliskan penilaian atau kesan Ustadz di sini..." required></textarea>
+          </div>
+          <button type="submit" class="btn primary full-btn">✉️ Kirim Penilaian ke Gmail Ziddan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>RanduCare Web</strong> • 100% Karya Asli <strong>M. Ziddan Arzaqi</strong> (Kelas 8F - Asy Syirazi)</p>
+    <p>Olimpiade Penelitian Siswa Indonesia (OPSI) • Bidang Ilmu Pengetahuan Terapan (IPT)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
